@@ -7,6 +7,7 @@ public class AccessTokenDTO {
     private String redirect_uri;
     private String state;
 
+
     public String getClient_id() {
         return client_id;
     }
