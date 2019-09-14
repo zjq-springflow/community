@@ -1,0 +1,14 @@
+2019-09-14 20:22:19.323  INFO 1956 --- [restartedMain] c.z.c.community.CommunityApplication     : Starting CommunityApplication on LAPTOP-VK1L6V2P with PID 1956 (started by 张金泉 in D:\Meclipse+Eclipse+ IntelliJ IDEA\IntelliJ IDEA\community)
+2019-09-14 20:22:19.329  INFO 1956 --- [restartedMain] c.z.c.community.CommunityApplication     : No active profile set, falling back to default profiles: default
+2019-09-14 20:22:19.426  INFO 1956 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2019-09-14 20:22:19.426  INFO 1956 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2019-09-14 20:22:22.709  INFO 1956 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-09-14 20:22:22.749  INFO 1956 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-09-14 20:22:22.749  INFO 1956 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.22]
+2019-09-14 20:22:22.968  INFO 1956 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-09-14 20:22:22.968  INFO 1956 --- [restartedMain] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3511 ms
+2019-09-14 20:22:23.865  INFO 1956 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-09-14 20:22:23.948  INFO 1956 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2019-09-14 20:22:24.432  INFO 1956 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2019-09-14 20:22:24.494  INFO 1956 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-09-14 20:22:24.498  INFO 1956 --- [restartedMain] c.z.c.community.CommunityApplication     : Started CommunityApplication in 6.349 seconds (JVM running for 9.081)

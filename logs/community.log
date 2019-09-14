@@ -1,0 +1,5 @@
+2019-09-14 20:37:32.285 DEBUG 1940 --- [http-nio-8080-exec-10] c.z.c.c.m.UserMapper.selectByExample     : ==> Parameters: e3d1ba17-a550-4893-9095-347511aaa27a(String)
+2019-09-14 20:37:32.293 DEBUG 1940 --- [http-nio-8080-exec-10] c.z.c.c.m.UserMapper.selectByExample     : <==      Total: 1
+2019-09-14 20:37:32.295 DEBUG 1940 --- [http-nio-8080-exec-10] c.z.c.c.m.N.countByExample               : ==>  Preparing: select count(*) from notification WHERE ( receiver = ? and status = ? ) 
+2019-09-14 20:37:32.296 DEBUG 1940 --- [http-nio-8080-exec-10] c.z.c.c.m.N.countByExample               : ==> Parameters: 1(Long), 0(Integer)
+2019-09-14 20:37:32.298 DEBUG 1940 --- [http-nio-8080-exec-10] c.z.c.c.m.N.countByExample               : <==      Total: 1
