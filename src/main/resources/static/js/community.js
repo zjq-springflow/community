@@ -44,7 +44,6 @@ function comment2target(targetId, type, content) {
 function comment(e) {
     var commentId = e.getAttribute("data-id");
     var content = $("#input-" + commentId).val();
-    alert(content);
     comment2target(commentId, 2, content);
 }
 
@@ -133,4 +132,11 @@ function selectTag(e) {
     }
 }
 
+function search1() {
+    var searchId = $("#search").val();
+    alert(searchId);
+    if (searchId == null || searchId == ""){
+        alert("您搜索的问题不存在，要不换个问题试试？");
+    }
+}
 

@@ -24,21 +24,19 @@
                 发起
             </h2>
             <hr class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
+
             <form action="/publish" method="post">
                 <input type="hidden" name="id" th:value="${id}">
                 <div class="form-group">
-                    <label for="window-title">问题标题(简单扼要):</label>
-                    <input type="text" th:value="${title}" class="form-control" id="window-title" name="title"
-                           placeholder="问题标题....">
+                    <label for="title">问题标题（简单扼要）:</label>
+                    <input type="text" class="form-control" th:value="${title}" id="title" name="title"
+                           placeholder="问题标题……"
+                           autocomplete="off">
                 </div>
-
                 <div class="form-group" id="question-editor">
-                    <label for="window-title">问题补充(必填：请参照右侧提示):</label>
-                    <textarea name="description"
-                              th:text="${description}"
-                              id="description"
+                    <label for="description">问题补充 (必填，请参照右侧提示):</label>
+                    <textarea name="description" id="description" th:text="${description}" style="display:none;"
                               class="form-control"
-                              style="display: none"
                               cols="30"
                               rows="10"></textarea>
                 </div>
@@ -47,9 +45,9 @@
                         var editor = editormd("question-editor", {
                             width: "100%",
                             height: 350,
+                            path: "/js/lib/",
                             delay: 0,
                             watch: false,
-                            path:"/js/lib/",
                             placeholder: "请输入问题描述",
                             imageUpload: true,
                             imageFormats: ["jpg", "jpeg", "gif", "png", "bmp", "webp"],
@@ -57,12 +55,11 @@
                         });
                     });
                 </script>
-
                 <div class="form-group">
-                    <label for="window-title">添加标签:</label>
-                    <input type="text" th:value="${tag}" class="form-control" id="tag" name="tag"
-                           placeholder="输入标签，以，号为分隔"
+                    <label for="tag">添加标签:</label>
+                    <input type="text" class="form-control" th:value="${tag}" id="tag" name="tag"
                            autocomplete="off"
+                           placeholder="输入标签，以，号分隔"
                            onclick="showSelectTag()">
                     <div id="select-tag" class="publish-tag-tab">
                         <ul class="nav nav-tabs" role="tablist">
@@ -77,7 +74,7 @@
                                  th:each="selectCategory: ${tags}"
                                  th:class="${selectCategoryStat.first ? 'active tab-pane':'tab-pane'}">
                                 <span>
-                                    <span class="label label-info" th:each="selectTag: ${selectCategory.tags}">
+                                    <span th:each="selectTag: ${selectCategory.tags}">
                                     <span class="community-tag" onclick="selectTag(this)"
                                           th:data-tag="${selectTag}"
                                           th:text="${' '+selectTag}">
@@ -89,15 +86,22 @@
                     </div>
                 </div>
 
-                <div class="container-fluid main">
+                <div class="container-fluid main ">
                     <div class="row">
-                        <div class="alert alert-danger" role="alert" th:text="${error}"
-                             th:if="${error != null}"></div>
-                        <button type="submit" class="btn btn-success btn-publish">
-                            发布
-                        </button>
+                        <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
+                            <div class="alert alert-danger col-lg-12 col-md-12 col-sm-12 col-xs-12"
+                                 th:text="${error}"
+                                 th:if="${error != null}">
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
+                            <button type="submit" class="btn btn-success btn-publish ">
+                                发布
+                            </button>
+                        </div>
                     </div>
                 </div>
+
             </form>
         </div>
         <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">

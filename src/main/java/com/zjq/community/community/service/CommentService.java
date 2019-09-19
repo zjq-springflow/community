@@ -68,7 +68,6 @@ public class CommentService {
             parentComment.setCommentCount(1);
             commentExtMapper.inCommentCount(parentComment);
 
-            System.out.println(question.getTitle());
             //评论时创建通知
             createNotify(comment, dbComment.getCommentator(), commentator.getName(), question.getTitle(), NotificationTypeEnum.REPLY_COMMENT, question.getId());
         } else {

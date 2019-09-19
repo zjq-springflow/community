@@ -11,16 +11,13 @@
     <script src="/js/community.js" type="application/javascript"></script>
 </head>
 <body>
-
 <div th:insert="~{navigation :: nav}"></div>
-
-<div class="container-fluid main">
+<div class="container-fluid main profile">
     <div class="row">
         <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
-            <h2 class="bold">
-                <span th:text="${sectionName}"></span>
-            </h2>
-            <hr >
+            <h2><span th:text="${sectionName}"></span></h2>
+            <hr>
+
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" th:if="${section == 'questions'}">
                 <div class="media" th:each="question : ${pagination.data}">
                     <div class="media-left">
@@ -61,22 +58,24 @@
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <nav aria-label="Page navigation">
                     <ul class="pagination">
-                        <li th:if="${pagination.isShowFirstPage()}">
-                            <a th:href="@{'/profile/'+${section}(page=${1})}"  aria-label="Previous">
+                        <li th:if="${pagination.showFirstPage}">
+                            <a th:href="@{'/profile/'+${section}(page=${1})}"
+                               aria-label="Previous">
                                 <span aria-hidden="true">&lt;&lt;</span>
                             </a>
                         </li>
                         <li th:if="${pagination.showPrevious}">
-                            <a th:href="@{'/profile/'+${section}(page=${pagination.page-1})}" aria-label="Previous">
+                            <a th:href="@{'/profile/'+${section}(page=${pagination.page - 1})}" aria-label="Previous">
                                 <span aria-hidden="true">&lt;</span>
                             </a>
                         </li>
-                        <li th:each="page : ${pagination.pages}" th:class="${pagination.page==page}?'active':''">
+
+                        <li th:each="page : ${pagination.pages}" th:class="${pagination.page == page}? 'active' : ''">
                             <a th:href="@{'/profile/'+${section}(page=${page})}" th:text="${page}"></a>
                         </li>
 
                         <li th:if="${pagination.showNext}">
-                            <a th:href="@{'/profile/'+${section}(page=${pagination.page+1})}" aria-label="Previous">
+                            <a th:href="@{'/profile/'+${section}(page=${pagination.page +1})}" aria-label="Previous">
                                 <span aria-hidden="true">&gt;</span>
                             </a>
                         </li>
@@ -90,9 +89,11 @@
             </div>
         </div>
         <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
-            <div class="list-group">
-                <a href="/profile/questions" th:class="${section=='questions'}?'active list-group-item':'list-group-item'">我的问题</a>
-                <a href="/profile/replies" th:class="${section=='replies'}?'active list-group-item':'list-group-item'">
+            <div class="list-group section">
+                <a href="/profile/questions"
+                   th:class="${section == 'questions'}? 'active list-group-item' : 'list-group-item'">我的问题</a>
+                <a href="/profile/replies"
+                   th:class="${section == 'replies'}? 'active list-group-item' : 'list-group-item'">
                     最新回复
                     <span class="badge" th:text="${session.unreadCount}"></span>
                 </a>
@@ -100,7 +101,6 @@
         </div>
     </div>
 </div>
-
 <div th:insert="~{footer :: foot}"></div>
 </body>
 </html>

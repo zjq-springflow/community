@@ -12,6 +12,7 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 import javax.servlet.http.HttpServletRequest;
 
 @Controller
+
 public class FileController {
     @Autowired
     private UCloudProvider uCloudProvider;
